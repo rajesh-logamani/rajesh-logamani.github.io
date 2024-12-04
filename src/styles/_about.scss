@@ -1,0 +1,101 @@
+.about {
+  padding: $spacing-xl 0;
+  background-color: var(--bg-primary);
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+  }
+
+  &__content {
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: $spacing-xl;
+      background: linear-gradient(135deg, $accent-color, darken($accent-color, 20%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__description {
+    max-width: 800px;
+    margin: 0 auto $spacing-xl;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    opacity: 0.8;
+  }
+
+  &__skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-lg;
+    margin-top: $spacing-xl;
+
+    .skill-card {
+      background: var(--card-bg);
+      padding: $spacing-lg;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+
+        .skill-card__icon {
+          background: $accent-color;
+          color: white;
+          transform: rotate(360deg);
+        }
+      }
+
+      &__icon {
+        width: 48px;
+        height: 48px;
+        background: rgba($accent-color, 0.1);
+        color: $accent-color;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: $spacing-md;
+        transition: all 0.3s ease;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+        color: var(--text-primary);
+      }
+
+      p {
+        color: var(--text-primary);
+        opacity: 0.8;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &__content {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    &__description {
+      font-size: 1rem;
+      padding: 0 $spacing-md;
+    }
+
+    &__skills {
+      grid-template-columns: 1fr;
+      padding: 0 $spacing-md;
+    }
+  }
+}

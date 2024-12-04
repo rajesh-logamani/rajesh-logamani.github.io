@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'header';
+@import 'timeline';
+@import 'hero';
+@import 'about';
+@import 'contact';
+@import 'projects';
+@import 'skills';
+@import 'dialog';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
