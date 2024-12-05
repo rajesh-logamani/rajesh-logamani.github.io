@@ -40,23 +40,23 @@ const Contact = () => {
               <Mail className="icon" />
               <div>
                 <h3>Email</h3>
-                <p>contact@example.com</p>
+                <p>rajeshlogamani@gmail.com</p>
               </div>
             </div>
             
-            <div className="contact__detail">
+            {/* <div className="contact__detail">
               <Phone className="icon" />
               <div>
                 <h3>Phone</h3>
                 <p>+1 (555) 123-4567</p>
               </div>
-            </div>
+            </div> */}
             
             <div className="contact__detail">
               <MapPin className="icon" />
               <div>
                 <h3>Location</h3>
-                <p>San Francisco, CA</p>
+                <p>Chennai, Tamilnadu, India</p>
               </div>
             </div>
           </div>

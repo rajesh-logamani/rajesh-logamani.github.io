@@ -19,12 +19,12 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 1,
-    year: '2023 - Present',
-    company: 'Tech Corp',
-    position: 'Senior Developer',
+    year: 'Nov 2024 - Present',
+    company: 'Cognizant Technology Solutions',
+    position: 'Senior Associate',
     description: 'Led development of enterprise applications using React and Node.js',
     icon: Briefcase,
-    location: 'San Francisco, CA',
+    location: 'Chennai, IN',
     team: '4 developers, 1 designer, 1 product manager',
     achievements: [
       'Increased application performance by 40%',
@@ -45,9 +45,9 @@ const experiences: Experience[] = [
   },
   {
     id: 2,
-    year: '2021 - 2023',
-    company: 'Digital Solutions Inc',
-    position: 'Full Stack Developer',
+    year: 'June 2022 - September 2024',
+    company: 'Tata Consultancy Services Ltd',
+    position: 'IT Analyst (Senior UI Developer)',
     description: 'Developed and maintained multiple client projects',
     icon: Code,
     location: 'Austin, TX',

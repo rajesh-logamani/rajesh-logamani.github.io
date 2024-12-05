@@ -49,13 +49,13 @@ const Header = () => {
             <button onClick={toggleTheme} className="theme-toggle">
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/rajesh-logamani/rajesh-logamani.github.io" target="_blank" rel="noopener noreferrer">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/rajesh-logamani" target="_blank" rel="noopener noreferrer">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:contact@example.com">
+            <a href="mailto:rajeshlogamani@gmail.com">
               <Mail size={20} />
             </a>
           </div>

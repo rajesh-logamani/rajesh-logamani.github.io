@@ -27,13 +27,13 @@ const Hero = () => {
           <h1>Hi, I'm <span ref={nameRef}></span></h1>
           <p>Full Stack Developer specializing in modern web technologies</p>
           <div className="social-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/rajesh-logamani/rajesh-logamani.github.io" target="_blank" rel="noopener noreferrer">
               <Github className="w-6 h-6 text-white" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/rajesh-logamani" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-6 h-6 text-white" />
             </a>
-            <a href="mailto:john@example.com">
+            <a href="mailto:rajeshlogamani@gmail.com">
               <Mail className="w-6 h-6 text-white" />
             </a>
           </div>
