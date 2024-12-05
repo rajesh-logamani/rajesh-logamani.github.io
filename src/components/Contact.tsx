@@ -6,6 +6,7 @@ interface FormData {
   from_name: string;
   from_email: string;
   message: string;
+  to_name: String;
 }
 
 interface AlertProps {
@@ -25,7 +26,8 @@ const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     from_name: '',
     from_email: '',
-    message: ''
+    message: '',
+    to_name:'Rajesh'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alert, setAlert] = useState<AlertProps | null>(null);
@@ -48,7 +50,7 @@ const Contact = () => {
           type: 'success',
           message: 'Message sent successfully! I will get back to you soon.'
         });
-        setFormData({ from_name: '', from_email: '', message: '' });
+        setFormData({ from_name: '', from_email: '', message: '', to_name:'Rajesh' });
       }
     } catch (error) {
       setAlert({
