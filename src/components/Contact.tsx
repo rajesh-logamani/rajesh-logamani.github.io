@@ -1,24 +1,63 @@
-import React, { useState } from 'react';
-import { Send, Mail, Phone, MapPin } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface AlertProps {
+  type: 'success' | 'error';
+  message: string;
+}
+
+const Alert: React.FC<AlertProps> = ({ type, message }) => (
+  <div className={`alert ${type === 'success' ? 'alert--success' : 'alert--error'}`}>
+    {type === 'success' ? <CheckCircle size={20} /> : <AlertCircle size={20} />}
+    <p>{message}</p>
+  </div>
+);
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const formRef = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [alert, setAlert] = useState<AlertProps | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+    setAlert(null);
+
+    try {
+      const result = await emailjs.sendForm(
+        'service_2ijo0ce', // Replace with your EmailJS service ID
+        'template_eq5hso6', // Replace with your EmailJS template ID
+        formRef.current!,
+        '_Re1NynMaq343zdc7' // Replace with your EmailJS public key
+      );
+
+      if (result.text === 'OK') {
+        setAlert({
+          type: 'success',
+          message: 'Message sent successfully! I will get back to you soon.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      }
+    } catch (error) {
+      setAlert({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -62,7 +101,9 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className="contact__form" onSubmit={handleSubmit}>
+        <form ref={formRef} className="contact__form" onSubmit={handleSubmit}>
+          {alert && <Alert type={alert.type} message={alert.message} />}
+          
           <div className="form__group">
             <input
               type="text"
