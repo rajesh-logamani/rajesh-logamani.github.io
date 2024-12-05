@@ -3,8 +3,8 @@ import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from 'lucide-reac
 import emailjs from '@emailjs/browser';
 
 interface FormData {
-  name: string;
-  email: string;
+  from_name: string;
+  from_email: string;
   message: string;
 }
 
@@ -23,8 +23,8 @@ const Alert: React.FC<AlertProps> = ({ type, message }) => (
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
+    from_name: '',
+    from_email: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,10 +37,10 @@ const Contact = () => {
 
     try {
       const result = await emailjs.sendForm(
-        'service_2ijo0ce', // Replace with your EmailJS service ID
-        'template_eq5hso6', // Replace with your EmailJS template ID
+        'service_your_service_id', // Replace with your EmailJS service ID
+        'template_your_template_id', // Replace with your EmailJS template ID
         formRef.current!,
-        '_Re1NynMaq343zdc7' // Replace with your EmailJS public key
+        'your_public_key' // Replace with your EmailJS public key
       );
 
       if (result.text === 'OK') {
@@ -48,7 +48,7 @@ const Contact = () => {
           type: 'success',
           message: 'Message sent successfully! I will get back to you soon.'
         });
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ from_name: '', from_email: '', message: '' });
       }
     } catch (error) {
       setAlert({
@@ -107,8 +107,8 @@ const Contact = () => {
           <div className="form__group">
             <input
               type="text"
-              name="name"
-              value={formData.name}
+              name="from_name"
+              value={formData.from_name}
               onChange={handleChange}
               placeholder="Your Name"
               required
@@ -118,8 +118,8 @@ const Contact = () => {
           <div className="form__group">
             <input
               type="email"
-              name="email"
-              value={formData.email}
+              name="from_email"
+              value={formData.from_email}
               onChange={handleChange}
               placeholder="Your Email"
               required
