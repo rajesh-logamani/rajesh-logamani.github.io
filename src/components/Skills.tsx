@@ -1,36 +1,36 @@
-import React from 'react';
 import { Code2, Database, Globe, Terminal, Cpu, Cloud } from 'lucide-react';
 
 const skillCategories = [
   {
     title: 'Frontend Development',
     icon: Code2,
-    skills: ['React.js', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux']
+    skills: ['React.js', 'Redux Toolkit', 'Next.js', 'SCSS', 'Material UI', 'Semantic UI', 'Redux']
   },
-  {
-    title: 'Backend Development',
-    icon: Database,
-    skills: ['Node.js', 'Express.js', 'Python', 'Django', 'RESTful APIs']
-  },
+  // {
+  //   title: 'Backend Development',
+  //   icon: Database,
+  //   skills: ['Node.js', 'Express.js', 'Python', 'Django', 'RESTful APIs']
+  // },
   {
     title: 'Database',
     icon: Globe,
-    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Elasticsearch']
+    // skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Elasticsearch']
+    skills: ['MSSQL', 'PostgreSQL', 'Oracle','Fulltext Search']
   },
   {
     title: 'DevOps & Tools',
     icon: Terminal,
-    skills: ['Git', 'Docker', 'Jenkins', 'AWS', 'Linux']
+    skills: ['Git', 'Docker', 'Jenkins', 'EmailJs' ]
   },
-  {
-    title: 'Mobile Development',
-    icon: Cpu,
-    skills: ['React Native', 'Flutter', 'iOS', 'Android', 'Ionic']
-  },
+  // {
+  //   title: 'Mobile Development',
+  //   icon: Cpu,
+  //   skills: ['React Native', 'Flutter', 'iOS', 'Android', 'Ionic']
+  // },
   {
     title: 'Cloud Services',
     icon: Cloud,
-    skills: ['AWS', 'Azure', 'Google Cloud', 'Heroku', 'Netlify']
+    skills: ['AWS', 'Azure', 'Google Cloud', 'Heroku', 'Netlify','Hostinger']
   }
 ];
 
